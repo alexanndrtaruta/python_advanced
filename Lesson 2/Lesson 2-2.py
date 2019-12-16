@@ -14,10 +14,11 @@ class Supermarket:
             sales = random.randint(0, 1)
             if sales:
                 self.sold_products += 1
-
-    def calculation_all_sales(self, *args):
-        self.all_sold_products = sum(*args)
-        return self.all_sold_products
+    @classmethod
+    def calculation_all_sales(cls, *args):
+        print(args)
+        cls.all_sold_products = sum(args)
+        return cls.all_sold_products
 
 
 metro_market = Supermarket('Metro')
@@ -25,7 +26,7 @@ metro_market.calculation_local_sales()
 print(f'At the supermarket {metro_market.name}, {metro_market.sold_products} sales')
 
 freshet_market = Supermarket('Freshet')
-metro_market.calculation_local_sales()
+freshet_market.calculation_local_sales()
 print(f'At the supermarket {freshet_market.name}, {freshet_market.sold_products} sales')
 
 Supermarket.calculation_all_sales(freshet_market.sold_products, metro_market.sold_products)
