@@ -13,8 +13,9 @@ class Vehicle:
 
     def fill_up(self, fuel_volume):
 
-         fuel_in_the_tank = 0
-         while fuel_in_the_tank <= self._volume_of_the_tank:
+        fuel_in_the_tank = 0
+
+        while fuel_in_the_tank <= self._volume_of_the_tank:
             if fuel_volume + fuel_in_the_tank <= self._volume_of_the_tank:
                 fuel_in_the_tank += fuel_volume
                 print(f'Now your tank is {fuel_in_the_tank} liters full')
@@ -50,7 +51,7 @@ class Truck(Vehicle):
     start_vehicle = False
 
     def __init__(self, carrying_capacity, vehicle_type, spaciousness, engine_volume, volume_of_the_tank,
-                 engine_type, fuel_consumption ):
+                 engine_type, fuel_consumption):
         self.carrying_capacity = carrying_capacity
         super().__init__(vehicle_type, spaciousness, engine_volume, volume_of_the_tank, engine_type, fuel_consumption)
 

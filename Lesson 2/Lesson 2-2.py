@@ -1,7 +1,10 @@
 import random
+
+
 class Supermarket:
 
     all_sold_products = 0
+
     def __init__(self, name):
         self.name = name
         self.sold_products = 0
@@ -15,7 +18,6 @@ class Supermarket:
     def calculation_all_sales(self, *args):
         self.all_sold_products = sum(*args)
         return self.all_sold_products
-
 
 
 metro_market = Supermarket('Metro')
