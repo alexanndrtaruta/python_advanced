@@ -1,12 +1,15 @@
 from datetime import datetime
 
-def timetodo(func):
+
+def timetodo(func, ):
     def wrapper(*args):
         start = datetime.now()
-        result  = func(*args)
+        result = func(*args)
         print(datetime.now() - start)
         return result
+
     return wrapper
+
 
 @timetodo
 def hello(count):
